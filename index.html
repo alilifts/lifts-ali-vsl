@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In — Strategy Session Confirmed | @lifts.ali</title>
+<meta name="description" content="Your 1-on-1 strategy session with Ali is locked in. Watch this short video before your call — it matters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════
+   CUSTOM PROPERTIES
+═══════════════════════════════════════════════════════ */
+:root {
+  --bg:          #080c10;
+  --bg-2:        #0b1018;
+  --bg-3:        #0f1520;
+  --primary:     #06b4fd;
+  --secondary:   #2cebf2;
+  --accent1:     #85e4ae;
+  --accent2:     #c4f075;
+  --white:       #f0f4f8;
+  --muted:       rgba(240,244,248,0.52);
+  --dim:         rgba(240,244,248,0.22);
+  --whisper:     rgba(240,244,248,0.10);
+  --card-bg:     rgba(255,255,255,0.028);
+  --card-border: rgba(255,255,255,0.075);
+  --glow-p:      rgba(6,180,253,0.22);
+  --glow-s:      rgba(44,235,242,0.18);
+  --r:           16px;
+  --r-sm:        10px;
+  --max-w:       780px;
+  --ease:        cubic-bezier(0.22,1,0.36,1);
+  --t:           0.38s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESET + BASE
+═══════════════════════════════════════════════════════ */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+button { font-family:inherit; cursor:pointer; }
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background:var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,var(--primary),var(--secondary));
+  border-radius:3px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ANIMATED GRADIENT MESH BACKGROUND
+═══════════════════════════════════════════════════════ */
+.bg-mesh {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  animation: meshDrift 22s ease-in-out infinite alternate;
+}
+@keyframes meshDrift {
+  0%   { background: radial-gradient(ellipse 85% 65% at 12% 5%,  rgba(6,180,253,0.09) 0%,transparent 52%), radial-gradient(ellipse 60% 52% at 88% 88%, rgba(44,235,242,0.07) 0%,transparent 50%), radial-gradient(ellipse 40% 44% at 50% 45%, rgba(133,228,174,0.04) 0%,transparent 50%); }
+  25%  { background: radial-gradient(ellipse 70% 58% at 78% 12%,  rgba(6,180,253,0.10) 0%,transparent 52%), radial-gradient(ellipse 52% 56% at 12% 78%, rgba(44,235,242,0.06) 0%,transparent 50%), radial-gradient(ellipse 44% 40% at 60% 28%, rgba(196,240,117,0.04) 0%,transparent 50%); }
+  50%  { background: radial-gradient(ellipse 65% 78% at 50% 0%,   rgba(6,180,253,0.11) 0%,transparent 52%), radial-gradient(ellipse 48% 44% at 92% 42%, rgba(44,235,242,0.08) 0%,transparent 50%), radial-gradient(ellipse 34% 42% at 18% 88%, rgba(133,228,174,0.05) 0%,transparent 50%); }
+  75%  { background: radial-gradient(ellipse 56% 66% at 8% 58%,   rgba(6,180,253,0.08) 0%,transparent 52%), radial-gradient(ellipse 66% 40% at 82% 8%,  rgba(44,235,242,0.09) 0%,transparent 50%), radial-gradient(ellipse 52% 58% at 42% 76%, rgba(133,228,174,0.04) 0%,transparent 50%); }
+  100% { background: radial-gradient(ellipse 76% 55% at 38% 96%,  rgba(6,180,253,0.09) 0%,transparent 52%), radial-gradient(ellipse 62% 62% at 72% 28%, rgba(44,235,242,0.07) 0%,transparent 50%), radial-gradient(ellipse 46% 50% at 8% 12%,  rgba(196,240,117,0.04) 0%,transparent 50%); }
+}
+
+/* Noise grain texture */
+.bg-mesh::after {
+  content:'';
+  position:absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;
+  opacity:1;
+}
+
+/* ═══════════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════════ */
+.container {
+  position:relative; z-index:1;
+  max-width:var(--max-w);
+  margin:0 auto;
+  padding:0 24px;
+}
+.section { padding:108px 0; position:relative; z-index:1; }
+
+/* Gradient divider between sections */
+.section-divider {
+  height:1px;
+  max-width:var(--max-w);
+  margin:0 auto;
+  background: linear-gradient(90deg,transparent 0%,rgba(6,180,253,0.32) 28%,rgba(44,235,242,0.45) 50%,rgba(6,180,253,0.32) 72%,transparent 100%);
+  box-shadow: 0 0 8px rgba(6,180,253,0.18);
+  position:relative; z-index:1;
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════════ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:14px 28px;
+  background: rgba(8,12,16,0.7);
+  backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.045);
+  display:flex; align-items:center; justify-content:center;
+}
+.nav-inner {
+  max-width:var(--max-w); width:100%;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-brand {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem; letter-spacing:0.06em;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.nav-pill {
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:0.7rem; font-weight:600; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--accent1);
+  padding:5px 13px; border-radius:20px;
+  background:rgba(133,228,174,0.08); border:1px solid rgba(133,228,174,0.22);
+}
+.nav-dot {
+  width:5px; height:5px; border-radius:50%;
+  background:var(--accent1); box-shadow:0 0 6px var(--accent1);
+  animation:dotPulse 2.2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════
+   TYPOGRAPHY UTILITIES
+═══════════════════════════════════════════════════════ */
+.display { font-family:'Bebas Neue',sans-serif; }
+.section-label {
+  display:inline-block;
+  font-size:0.69rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  padding:5px 14px; border-radius:20px; margin-bottom:16px;
+}
+.label-blue  { color:var(--primary);   background:rgba(6,180,253,0.08);  border:1px solid rgba(6,180,253,0.2);  }
+.label-green { color:var(--accent1);   background:rgba(133,228,174,0.08); border:1px solid rgba(133,228,174,0.22); }
+.label-lime  { color:var(--accent2);   background:rgba(196,240,117,0.08); border:1px solid rgba(196,240,117,0.22); }
+.label-cyan  { color:var(--secondary); background:rgba(44,235,242,0.08);  border:1px solid rgba(44,235,242,0.2);  }
+
+.section-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,6.5vw,3.8rem);
+  line-height:1.04; letter-spacing:0.03em;
+  margin-bottom:16px;
+}
+.grad {
+  background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 55%,var(--accent1) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.section-sub {
+  font-size:1.02rem; color:var(--muted);
+  line-height:1.8; max-width:560px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════ */
+#hero {
+  min-height:100dvh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:130px 28px 90px;
+  position:relative; z-index:1;
+}
+#hero::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,var(--primary),var(--secondary),var(--primary),transparent);
+  opacity:0.55;
+}
+#hero::after {
+  content:'';
+  position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse 65% 55% at 50% 38%,rgba(6,180,253,0.10) 0%,transparent 65%);
+}
+
+/* Confirm badge */
+.confirm-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:9px 20px; border-radius:50px; margin-bottom:30px;
+  background:linear-gradient(135deg,rgba(133,228,174,0.13),rgba(196,240,117,0.07));
+  border:1px solid rgba(133,228,174,0.38);
+  box-shadow:0 0 28px rgba(133,228,174,0.12);
+  opacity:0; transition:opacity 0.7s ease 0.3s;
+}
+.confirm-badge.show { opacity:1; }
+.badge-icon {
+  width:22px; height:22px; border-radius:50%;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.badge-text { font-size:0.78rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent1); }
+
+/* Brand tag */
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:0.74rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase;
+  color:rgba(255,255,255,0.32); margin-bottom:28px;
+  opacity:0; animation:fadeDown 0.8s ease 0.1s both;
+}
+
+/* Hero headline */
+.hero-hl {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(5.5rem,20vw,12rem);
+  line-height:0.88; letter-spacing:0.02em;
+  margin-bottom:10px;
+  display:block; overflow:hidden;
+}
+.hero-hl .w {
+  display:inline-block;
+  background:linear-gradient(150deg,#ffffff 0%,var(--primary) 48%,var(--secondary) 80%,var(--accent1) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  opacity:0; transform:translateY(70px);
+  transition:opacity 0.65s var(--ease), transform 0.65s var(--ease);
+}
+.hero-hl .w.show { opacity:1; transform:translateY(0); }
+.hero-hl .w:nth-child(2) { transition-delay:0.14s; }
+.hero-hl .w:nth-child(3) { transition-delay:0.28s; }
+
+.hero-sub-headline {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.4rem,3.5vw,2rem);
+  letter-spacing:0.1em; color:rgba(255,255,255,0.22);
+  margin-bottom:24px;
+  opacity:0; transition:opacity 0.7s ease 0.42s;
+}
+.hero-sub-headline.show { opacity:1; }
+
+.hero-body {
+  font-size:clamp(1rem,2.2vw,1.18rem);
+  color:var(--muted); max-width:460px; margin:0 auto 44px;
+  line-height:1.78;
+  opacity:0; transform:translateY(18px);
+  transition:opacity 0.7s ease 0.52s, transform 0.7s ease 0.52s;
+}
+.hero-body.show { opacity:1; transform:translateY(0); }
+.hero-body strong { color:var(--secondary); font-weight:600; }
+
+/* Spots indicator */
+.spots-bar {
+  display:inline-flex; align-items:center; gap:10px;
+  margin-bottom:0;
+  opacity:0; transition:opacity 0.6s ease 0.68s;
+}
+.spots-bar.show { opacity:1; }
+.spot-dots { display:flex; gap:5px; }
+.spot-dot {
+  width:8px; height:8px; border-radius:50%;
+  transition:all 0.3s;
+}
+.spot-dot.filled { background:var(--primary); box-shadow:0 0 7px rgba(6,180,253,0.65); }
+.spot-dot.empty  { background:rgba(255,255,255,0.12); }
+.spots-text { font-size:0.8rem; color:var(--dim); }
+.spots-text strong { color:var(--primary); font-weight:600; }
+
+/* Scroll hint */
+.scroll-hint {
+  position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  font-size:0.66rem; letter-spacing:0.13em; text-transform:uppercase; color:var(--dim);
+  opacity:0; animation:fadeIn 1s ease 1.5s both;
+}
+.scroll-hint svg { animation:bounce 1.7s ease-in-out infinite; }
+
+/* ═══════════════════════════════════════════════════════
+   VIDEO SECTION
+═══════════════════════════════════════════════════════ */
+.vsl-section { padding:88px 0; }
+.video-wrap {
+  max-width:620px; margin:0 auto; text-align:center;
+}
+.video-eyebrow {
+  font-size:0.72rem; font-weight:700; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--primary); margin-bottom:18px;
+}
+.video-player {
+  position:relative; width:100%; aspect-ratio:16/9;
+  border-radius:var(--r); overflow:hidden; cursor:pointer;
+  background:linear-gradient(140deg,#09101f 0%,#0c1428 50%,#07101c 100%);
+  border:1px solid rgba(6,180,253,0.14);
+  box-shadow:0 0 40px rgba(6,180,253,0.10),0 28px 64px rgba(0,0,0,0.55);
+  transition:box-shadow var(--t),transform var(--t);
+}
+.video-player:hover,
+.video-player:focus-visible {
+  box-shadow:0 0 65px rgba(6,180,253,0.22),0 36px 80px rgba(0,0,0,0.65);
+  transform:translateY(-3px);
+  outline:none;
+}
+
+/* Grid lines overlay */
+.vp-grid {
+  position:absolute; inset:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(6,180,253,0.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(6,180,253,0.028) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+/* Radial vignette */
+.vp-vignette {
+  position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse 72% 62% at 50% 50%,transparent 35%,rgba(7,12,20,0.6) 100%);
+}
+/* Diagonal accent lines */
+.vp-lines {
+  position:absolute; inset:0; pointer-events:none; opacity:0.06;
+}
+
+/* Pulsing rings + play button */
+.vp-center {
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+}
+.pulse-wrap {
+  position:relative; width:80px; height:80px;
+  display:flex; align-items:center; justify-content:center;
+}
+.ring {
+  position:absolute; border-radius:50%;
+  border:1.5px solid var(--primary);
+  animation:ringOut 2.6s ease-out infinite;
+}
+.ring:nth-child(1) { width:80px;  height:80px;  animation-delay:0s;   opacity:0.55; }
+.ring:nth-child(2) { width:112px; height:112px; animation-delay:0.65s; opacity:0.32; }
+.ring:nth-child(3) { width:144px; height:144px; animation-delay:1.3s;  opacity:0.16; }
+@keyframes ringOut {
+  0%   { transform:scale(0.75); opacity:0.7; }
+  75%  { transform:scale(1);    opacity:0;   }
+  100% { transform:scale(1);    opacity:0;   }
+}
+.play-btn {
+  position:absolute;
+  width:66px; height:66px; border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 32px rgba(6,180,253,0.52),0 8px 22px rgba(0,0,0,0.42);
+  transition:transform var(--t),box-shadow var(--t);
+}
+.video-player:hover .play-btn {
+  transform:scale(1.1);
+  box-shadow:0 0 52px rgba(6,180,253,0.72),0 12px 32px rgba(0,0,0,0.52);
+}
+.vp-meta { color:rgba(255,255,255,0.3); font-size:0.8rem; letter-spacing:0.04em; }
+.vp-duration {
+  position:absolute; bottom:14px; right:14px; z-index:3;
+  font-size:0.74rem; font-weight:600;
+  padding:4px 11px; border-radius:20px;
+  background:rgba(0,0,0,0.62); backdrop-filter:blur(8px);
+  color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.09);
+}
+
+/* Corner brackets */
+.corner { position:absolute; width:18px; height:18px; pointer-events:none; opacity:0.5; }
+.corner.tl { top:12px; left:12px; border-top:2px solid var(--primary); border-left:2px solid var(--primary); }
+.corner.tr { top:12px; right:12px; border-top:2px solid var(--primary); border-right:2px solid var(--primary); }
+.corner.bl { bottom:12px; left:12px; border-bottom:2px solid var(--primary); border-left:2px solid var(--primary); }
+.corner.br { bottom:12px; right:12px; border-bottom:2px solid var(--primary); border-right:2px solid var(--primary); }
+
+.video-caption {
+  margin-top:20px; text-align:center;
+  font-size:0.9rem; color:var(--muted); line-height:1.7;
+}
+.video-caption strong { color:var(--secondary); }
+
+/* ═══════════════════════════════════════════════════════
+   WHAT THIS CALL IS / ISN'T
+═══════════════════════════════════════════════════════ */
+.call-columns {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:20px; margin-top:44px;
+}
+.call-col h4 {
+  font-size:0.68rem; font-weight:700; letter-spacing:0.17em; text-transform:uppercase;
+  padding-bottom:12px; margin-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,0.065);
+}
+.call-col.is h4   { color:var(--accent1); }
+.call-col.isnt h4 { color:rgba(255,255,255,0.28); }
+
+.call-row {
+  display:flex; align-items:flex-start; gap:13px;
+  padding:14px 14px; border-radius:var(--r-sm);
+  margin-bottom:7px;
+  transition:background var(--t);
+}
+.call-row:hover { background:rgba(255,255,255,0.018); }
+.call-ic {
+  flex-shrink:0; width:26px; height:26px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center; margin-top:2px;
+}
+.call-col.is   .call-ic { background:rgba(133,228,174,0.10); }
+.call-col.isnt .call-ic { background:rgba(255,255,255,0.04); }
+.call-row p { font-size:0.88rem; color:var(--muted); line-height:1.62; }
+.call-row p strong { color:var(--white); font-weight:600; display:block; margin-bottom:2px; font-size:0.9rem; }
+
+/* ═══════════════════════════════════════════════════════
+   PROOF / AUTHORITY
+═══════════════════════════════════════════════════════ */
+.proof-cards {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:14px; margin:44px 0 0;
+}
+.proof-card {
+  background:var(--card-bg); border:1px solid var(--card-border);
+  border-radius:var(--r); padding:28px 20px; text-align:center;
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  position:relative; overflow:hidden;
+  transition:transform var(--t),box-shadow var(--t),border-color var(--t);
+}
+.proof-card::before {
+  content:''; position:absolute; top:0; left:10%; right:10%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(6,180,253,0.45),transparent);
+  opacity:0; transition:opacity var(--t);
+}
+.proof-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 22px 55px rgba(0,0,0,0.38),0 0 32px rgba(6,180,253,0.10);
+  border-color:rgba(6,180,253,0.2);
+}
+.proof-card:hover::before { opacity:1; }
+.stat-num {
+  font-family:'Bebas Neue',sans-serif; font-size:3.2rem; line-height:1;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  display:block; margin-bottom:8px;
+}
+.stat-label { font-size:0.82rem; color:var(--muted); line-height:1.55; }
+.stat-label strong { color:var(--white); display:block; font-size:0.88rem; margin-bottom:3px; }
+
+/* Testimonial */
+.testimonial {
+  margin-top:36px; padding:32px 30px;
+  border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(6,180,253,0.045),rgba(44,235,242,0.025));
+  border:1px solid rgba(6,180,253,0.11);
+  position:relative;
+}
+.testimonial::before {
+  content:'\201C';
+  font-family:'Bebas Neue',sans-serif; font-size:5rem; line-height:0;
+  color:var(--primary); opacity:0.35;
+  position:absolute; top:28px; left:24px;
+  pointer-events:none;
+}
+.stars { display:flex; gap:3px; margin-bottom:16px; padding-left:2px; }
+.star  { color:var(--accent2); font-size:13px; }
+.quote-text {
+  font-size:1.02rem; font-style:italic;
+  color:rgba(255,255,255,0.78); line-height:1.8;
+  margin-bottom:22px; padding-left:4px;
+}
+.quote-author { display:flex; align-items:center; gap:14px; }
+.avatar {
+  width:44px; height:44px; border-radius:50%; flex-shrink:0;
+  background:linear-gradient(135deg,rgba(6,180,253,0.2),rgba(44,235,242,0.1));
+  border:1.5px solid rgba(6,180,253,0.28);
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.75rem; font-weight:700; color:var(--primary);
+}
+.author-name { font-size:0.9rem; font-weight:600; color:var(--white); }
+.author-role { font-size:0.78rem; color:var(--muted); margin-top:1px; }
+
+/* ═══════════════════════════════════════════════════════
+   PREPARE CHECKLIST
+═══════════════════════════════════════════════════════ */
+.prepare-callout {
+  padding:16px 20px; border-radius:0 var(--r-sm) var(--r-sm) 0;
+  border-left:2.5px solid var(--accent2);
+  background:rgba(196,240,117,0.04);
+  font-size:0.92rem; color:var(--muted); font-style:italic; line-height:1.7;
+  margin-bottom:32px;
+}
+.prepare-callout strong { color:var(--accent2); font-style:normal; }
+
+.checklist { list-style:none; display:flex; flex-direction:column; gap:11px; }
+.ci {
+  display:flex; align-items:flex-start; gap:16px;
+  padding:18px 20px; border-radius:var(--r-sm);
+  background:var(--card-bg); border:1px solid var(--card-border);
+  backdrop-filter:blur(12px);
+  transition:border-color var(--t),background var(--t),transform var(--t);
+  cursor:default;
+}
+.ci:hover {
+  border-color:rgba(133,228,174,0.28);
+  background:rgba(133,228,174,0.035);
+  transform:translateX(5px);
+}
+.ci-check {
+  flex-shrink:0; width:24px; height:24px; border-radius:50%; margin-top:1px;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 12px rgba(133,228,174,0.3);
+}
+.ci-text strong { display:block; font-size:0.95rem; font-weight:600; color:var(--white); margin-bottom:3px; }
+.ci-text p      { font-size:0.84rem; color:var(--muted); line-height:1.6; }
+
+/* ═══════════════════════════════════════════════════════
+   MINDSET CLOSE
+═══════════════════════════════════════════════════════ */
+#mindset {
+  padding:110px 0; position:relative; z-index:1; overflow:hidden;
+}
+#mindset::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse 85% 65% at 50% 50%,rgba(6,180,253,0.055) 0%,transparent 65%);
+}
+.mindset-inner { text-align:center; max-width:var(--max-w); margin:0 auto; padding:0 24px; }
+.mindset-quote {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.3rem,6.5vw,4.2rem);
+  line-height:1.09; letter-spacing:0.03em;
+  margin-bottom:30px;
+}
+.mindset-quote .white { color:var(--white); }
+.mindset-quote .tinted {
+  background:linear-gradient(135deg,var(--white) 0%,var(--primary) 45%,var(--secondary) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.mindset-body {
+  font-size:1.02rem; color:var(--muted); line-height:1.85;
+  max-width:520px; margin:0 auto 44px;
+}
+.mindset-body em { color:var(--secondary); font-style:normal; font-weight:500; }
+.mindset-body strong { color:var(--white); font-weight:600; }
+
+.status-pill {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:13px 24px; border-radius:50px;
+  background:rgba(6,180,253,0.07); border:1px solid rgba(6,180,253,0.2);
+  font-size:0.86rem; color:var(--muted);
+}
+.status-dot {
+  width:8px; height:8px; border-radius:50%;
+  background:var(--accent1); box-shadow:0 0 8px var(--accent1);
+  animation:dotPulse 2.2s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════ */
+footer {
+  position:relative; z-index:1;
+  border-top:1px solid rgba(255,255,255,0.055);
+  padding:64px 28px 44px;
+}
+.footer-inner {
+  max-width:var(--max-w); margin:0 auto;
+  display:flex; flex-direction:column; align-items:center; gap:28px; text-align:center;
+}
+.call-box {
+  width:100%; max-width:420px; padding:24px 30px;
+  border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(6,180,253,0.065),rgba(44,235,242,0.035));
+  border:1px solid rgba(6,180,253,0.17); box-shadow:0 0 32px rgba(6,180,253,0.065);
+}
+.call-box-eyebrow {
+  font-size:0.68rem; font-weight:700; letter-spacing:0.17em;
+  text-transform:uppercase; color:var(--muted); margin-bottom:6px;
+}
+.call-time {
+  font-family:'Bebas Neue',sans-serif; font-size:2.4rem; letter-spacing:0.05em;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  line-height:1.1;
+}
+.call-time-note { font-size:0.78rem; color:var(--dim); margin-top:5px; }
+
+.btn-cal {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:15px 30px; border-radius:50px;
+  font-size:0.9rem; font-weight:700; letter-spacing:0.04em;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#080c10; border:none;
+  box-shadow:0 0 26px rgba(6,180,253,0.32),0 8px 22px rgba(0,0,0,0.32);
+  transition:transform var(--t),box-shadow var(--t);
+  position:relative; overflow:hidden;
+}
+.btn-cal::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.18),transparent);
+  opacity:0; transition:opacity var(--t);
+}
+.btn-cal:hover  { transform:translateY(-2px) scale(1.02); box-shadow:0 0 44px rgba(6,180,253,0.46),0 12px 32px rgba(0,0,0,0.4); }
+.btn-cal:hover::after { opacity:1; }
+.btn-cal:active { transform:scale(0.98); }
+
+.footer-social {
+  display:flex; align-items:center; gap:12px;
+  font-size:0.84rem; color:var(--muted);
+}
+.ig-link {
+  display:inline-flex; align-items:center; gap:7px;
+  padding:7px 16px; border-radius:20px; font-size:0.84rem; font-weight:500;
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  transition:background var(--t),border-color var(--t);
+}
+.ig-link:hover { background:rgba(6,180,253,0.08); border-color:rgba(6,180,253,0.22); }
+
+.footer-legal { font-size:0.7rem; color:var(--dim); max-width:480px; line-height:1.65; }
+.footer-copy  { font-size:0.7rem; color:rgba(255,255,255,0.10); }
+
+/* ═══════════════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════════════ */
+.reveal {
+  opacity:0; transform:translateY(30px);
+  transition:opacity 0.72s var(--ease), transform 0.72s var(--ease);
+}
+.reveal.up { opacity:1; transform:translateY(0); }
+.d1 { transition-delay:0.08s; }
+.d2 { transition-delay:0.16s; }
+.d3 { transition-delay:0.24s; }
+.d4 { transition-delay:0.32s; }
+.d5 { transition-delay:0.40s; }
+
+/* ═══════════════════════════════════════════════════════
+   KEYFRAMES
+═══════════════════════════════════════════════════════ */
+@keyframes dotPulse    { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.45;transform:scale(0.65);} }
+@keyframes fadeDown    { from{opacity:0;transform:translateY(-14px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeIn      { from{opacity:0;} to{opacity:1;} }
+@keyframes bounce      { 0%,100%{transform:translateY(0);} 50%{transform:translateY(7px);} }
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media(max-width:640px){
+  .call-columns       { grid-template-columns:1fr; }
+  .proof-cards        { grid-template-columns:1fr; gap:11px; }
+  .section            { padding:80px 0; }
+  .hero-hl            { font-size:clamp(4rem,24vw,8rem); }
+}
+@media(max-width:480px){
+  nav { padding:10px 16px; }
+  .nav-pill { display:none; }
+  .container { padding:0 18px; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   REDUCED MOTION
+═══════════════════════════════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after { animation-duration:0.001ms!important; animation-iteration-count:1!important; transition-duration:0.001ms!important; }
+  .reveal { opacity:1; transform:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Animated background mesh -->
+<div class="bg-mesh" aria-hidden="true"></div>
+
+<!-- ─── NAV ────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">@lifts.ali</span>
+    <span class="nav-pill"><span class="nav-dot"></span>Session Confirmed</span>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════
+     1. HERO
+═══════════════════════════════════════════════ -->
+<section id="hero" aria-labelledby="hl">
+
+  <div class="hero-tag">
+    <span class="nav-dot"></span>
+    Medical Student &middot; High-Performance Coach
+  </div>
+
+  <div class="confirm-badge" id="badge">
+    <div class="badge-icon">
+      <svg width="11" height="9" viewBox="0 0 11 9" fill="none" aria-hidden="true">
+        <path d="M1 4.5L4 7.5L10 1" stroke="#080c10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="badge-text">Strategy Session Confirmed</span>
+  </div>
+
+  <h1 id="hl">
+    <span class="hero-hl" id="hl-text" aria-label="You're In."></span>
+  </h1>
+
+  <p class="hero-sub-headline" id="hl-sub">The call that changes everything.</p>
+
+  <p class="hero-body" id="hero-body">
+    You just made one of the smartest decisions for your health.<br>
+    <strong>Now let's make sure you get everything out of this call.</strong>
+  </p>
+
+  <div class="spots-bar" id="spots">
+    <div class="spot-dots" aria-hidden="true">
+      <div class="spot-dot filled"></div>
+      <div class="spot-dot filled"></div>
+      <div class="spot-dot filled"></div>
+      <div class="spot-dot empty"></div>
+      <div class="spot-dot empty"></div>
+    </div>
+    <p class="spots-text">Only <strong>3 spots</strong> remaining this month</p>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Keep reading</span>
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     2. VSL VIDEO
+═══════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section class="vsl-section" id="video">
+  <div class="container">
+    <div class="video-wrap reveal">
+
+      <p class="video-eyebrow">&#9654;&nbsp; Watch Before Your Call</p>
+
+      <div class="video-player" role="button" tabindex="0" aria-label="Play pre-call video from Ali">
+        <!-- Overlays -->
+        <div class="vp-grid"></div>
+        <div class="vp-vignette"></div>
+        <!-- SVG diagonal lines -->
+        <svg class="vp-lines" viewBox="0 0 620 350" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#06b4fd" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#06b4fd" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#2cebf2" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="350" x2="620" y2="0"   stroke="url(#lg)" stroke-width="1"/>
+          <line x1="-80" y1="350" x2="540" y2="0" stroke="url(#lg)" stroke-width="1"/>
+          <line x1="80" y1="350" x2="700" y2="0"  stroke="url(#lg)" stroke-width="1"/>
+        </svg>
+        <!-- Corner brackets -->
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+        <!-- Center content -->
+        <div class="vp-center">
+          <div class="pulse-wrap">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="play-btn" aria-hidden="true">
+              <svg width="24" height="28" viewBox="0 0 24 28" fill="none">
+                <path d="M2 2.5l20 11.5L2 25.5V2.5Z" fill="#080c10" stroke="#080c10" stroke-width="0.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <p class="vp-meta">Ali Lifts &nbsp;&middot;&nbsp; @lifts.ali</p>
+        </div>
+        <span class="vp-duration">~7 min</span>
+      </div>
+
+      <div class="video-caption">
+        <p>This video is <strong>short and intentional.</strong> Watch it before we get on the call.</p>
+        <p style="margin-top:6px;font-size:0.8rem;color:var(--dim);">
+          It shows you exactly how Ali thinks — and what makes this coaching different.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     3. WHAT THIS CALL IS / ISN'T
+═══════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section class="section" id="call">
+  <div class="container">
+
+    <div class="reveal"><span class="section-label label-blue">The Session</span></div>
+    <h2 class="section-title reveal d1">
+      This is the most important<br>
+      <span class="grad">45 minutes</span> of your journey.
+    </h2>
+    <p class="section-sub reveal d2">
+      Let's be clear about what this session is — and what it isn't.<br>Because that clarity is what makes it genuinely valuable.
+    </p>
+
+    <div class="call-columns">
+
+      <div class="call-col is">
+        <h4>What it IS</h4>
+
+        <div class="call-row reveal d1">
+          <div class="call-ic">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none" aria-hidden="true">
+              <path d="M1.5 5.5L5 9 11.5 1.5" stroke="#85e4ae" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p><strong>An honest diagnosis</strong>We go deep into your history, your obstacles, and why previous attempts didn't stick.</p>
+        </div>
+
+        <div class="call-row reveal d2">
+          <div class="call-ic">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none" aria-hidden="true">
+              <path d="M1.5 5.5L5 9 11.5 1.5" stroke="#85e4ae" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p><strong>A crystal-clear roadmap</strong>You'll leave knowing exactly what needs to happen to hit your goal — regardless of what we decide.</p>
+        </div>
+
+        <div class="call-row reveal d3">
+          <div class="call-ic">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none" aria-hidden="true">
+              <path d="M1.5 5.5L5 9 11.5 1.5" stroke="#85e4ae" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p><strong>Clinical-grade insight</strong>Ali applies medical training to every coaching conversation. You won't get this from a generic coach.</p>
+        </div>
+
+        <div class="call-row reveal d4">
+          <div class="call-ic">
+            <svg width="13" height="11" viewBox="0 0 13 11" fill="none" aria-hidden="true">
+              <path d="M1.5 5.5L5 9 11.5 1.5" stroke="#85e4ae" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p><strong>A high-value 45 minutes</strong>Every minute is intentional. You'll leave with clarity you've never had before.</p>
+        </div>
+      </div>
+
+      <div class="call-col isnt">
+        <h4>What it ISN'T</h4>
+
+        <div class="call-row reveal d1">
+          <div class="call-ic">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 2.5l7 7M9.5 2.5l-7 7" stroke="rgba(255,255,255,0.22)" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p><strong style="color:rgba(255,255,255,0.38)">A sales script</strong>No pitch deck. No pressure. If we're not a fit, Ali will tell you directly and respectfully.</p>
+        </div>
+
+        <div class="call-row reveal d2">
+          <div class="call-ic">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 2.5l7 7M9.5 2.5l-7 7" stroke="rgba(255,255,255,0.22)" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p><strong style="color:rgba(255,255,255,0.38)">Generic advice</strong>You won't hear "eat less, move more." Every insight is built around your specific situation.</p>
+        </div>
+
+        <div class="call-row reveal d3">
+          <div class="call-ic">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 2.5l7 7M9.5 2.5l-7 7" stroke="rgba(255,255,255,0.22)" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p><strong style="color:rgba(255,255,255,0.38)">A motivation session</strong>This isn't a pep talk. It's a strategic working session with someone who holds you to a high standard.</p>
+        </div>
+
+        <div class="call-row reveal d4">
+          <div class="call-ic">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 2.5l7 7M9.5 2.5l-7 7" stroke="rgba(255,255,255,0.22)" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p><strong style="color:rgba(255,255,255,0.38)">A waste of time</strong>Ali values his time as much as yours. Every call moves fast and every minute counts.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     4. PROOF / AUTHORITY
+═══════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section class="section" id="proof">
+  <div class="container">
+
+    <div class="reveal"><span class="section-label label-blue">Why Ali</span></div>
+    <h2 class="section-title reveal d1">
+      Clinical precision.<br><span class="grad">Real results.</span>
+    </h2>
+    <p class="section-sub reveal d2">
+      Built during medical school. Tested on hundreds of real clients.<br>
+      Refined by someone who refuses to accept mediocre outcomes.
+    </p>
+
+    <div class="proof-cards">
+      <div class="proof-card reveal d1">
+        <span class="stat-num" data-target="200" data-suffix="+">0+</span>
+        <div class="stat-label">
+          <strong>Clients Transformed</strong>
+          Across every body type, schedule, and starting point imaginable
+        </div>
+      </div>
+      <div class="proof-card reveal d2">
+        <span class="stat-num" data-target="4" data-suffix="+ yrs">0 yrs</span>
+        <div class="stat-label">
+          <strong>Elite Coaching Experience</strong>
+          Built simultaneously with a medical degree — no shortcuts, ever
+        </div>
+      </div>
+      <div class="proof-card reveal d3">
+        <span class="stat-num" data-target="94" data-suffix="%">0%</span>
+        <div class="stat-label">
+          <strong>Client Retention Rate</strong>
+          Because results keep people around — not contracts or guilt
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial reveal">
+      <div class="stars" aria-label="5 out of 5 stars">
+        <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        <span class="star">&#9733;</span><span class="star">&#9733;</span>
+      </div>
+      <p class="quote-text">
+        Ali didn't give me a cookie-cutter program — he gave me a system built around my actual life. I'm a nurse working 12-hour shifts. Every other coach just gave me excuses to fail. Ali gave me a plan that worked with my chaos. Down 31 lbs in 14 weeks, and I actually kept it off. Nothing has ever stuck like this before.
+      </p>
+      <div class="quote-author">
+        <div class="avatar" aria-hidden="true">S.M.</div>
+        <div>
+          <div class="author-name">Sarah M.</div>
+          <div class="author-role">ICU Nurse &middot; Lost 31 lbs in 14 weeks</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     5. WHAT TO PREPARE
+═══════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section class="section" id="prepare">
+  <div class="container">
+
+    <div class="reveal"><span class="section-label label-green">Before The Call</span></div>
+    <h2 class="section-title reveal d1">
+      Come prepared.<br><span class="grad">Leave transformed.</span>
+    </h2>
+
+    <p class="prepare-callout reveal d2">
+      <strong>"The quality of this session depends on your honesty — not your current fitness level.</strong>
+      Come ready to be real about where you are. That's how we build the right plan for you."
+    </p>
+
+    <ul class="checklist" role="list">
+      <li class="ci reveal d1">
+        <div class="ci-check" aria-hidden="true">
+          <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="#080c10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ci-text">
+          <strong>Find a quiet space — 45 uninterrupted minutes</strong>
+          <p>Treat this like a doctor's consultation. Close the tabs. Silence the notifications. Show up present.</p>
+        </div>
+      </li>
+      <li class="ci reveal d2">
+        <div class="ci-check" aria-hidden="true">
+          <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="#080c10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ci-text">
+          <strong>Know your #1 goal and your biggest obstacle</strong>
+          <p>Not "I want to lose weight." Be specific. What does success actually look like in 12 weeks for you?</p>
+        </div>
+      </li>
+      <li class="ci reveal d3">
+        <div class="ci-check" aria-hidden="true">
+          <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="#080c10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ci-text">
+          <strong>Be honest about your schedule and lifestyle</strong>
+          <p>We build your plan around your real life — not some idealized version of it. The more honest you are, the better the plan.</p>
+        </div>
+      </li>
+      <li class="ci reveal d4">
+        <div class="ci-check" aria-hidden="true">
+          <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="#080c10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ci-text">
+          <strong>Come open to a genuinely different approach</strong>
+          <p>If what you've tried before worked, you wouldn't be here. Stay open. That's where real results live.</p>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     6. PRE-CALL MINDSET CLOSE
+═══════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section id="mindset">
+  <div class="mindset-inner">
+
+    <div class="reveal"><span class="section-label label-lime">The Truth</span></div>
+
+    <h2 class="mindset-quote reveal d1">
+      <span class="white">You're not paying for workouts.</span><br>
+      <span class="tinted">You're paying to stop starting over.</span>
+    </h2>
+
+    <p class="mindset-body reveal d2">
+      Every year you stay stuck costs more than any coaching program ever will —
+      in time, in confidence, in the version of yourself you're not yet living.<br><br>
+      <em>The question isn't whether you can afford to invest.</em><br>
+      It's whether you can afford another year exactly where you are now.<br><br>
+      <strong>Ali built his coaching the same way he approaches medicine:</strong>
+      with evidence, precision, and zero tolerance for wasted time.
+      Come ready to commit, and this session will change how you think about your body — permanently.
+    </p>
+
+    <div class="status-pill reveal d3">
+      <span class="status-dot"></span>
+      Your call is confirmed and waiting. See you soon.
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     7. FOOTER CTA
+═══════════════════════════════════════════════ -->
+<div class="section-divider" style="margin-bottom:0"></div>
+<footer id="footer">
+  <div class="footer-inner">
+
+    <div class="call-box reveal">
+      <p class="call-box-eyebrow">Your Strategy Session</p>
+      <p class="call-time">[YOUR CALL TIME HERE]</p>
+      <p class="call-time-note">Check your email for the Zoom link &middot; Don't be late</p>
+    </div>
+
+    <button class="btn-cal reveal d1" type="button" id="cal-btn" aria-label="Add strategy session to calendar">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <rect x="2" y="3.5" width="14" height="12.5" rx="2" stroke="#080c10" stroke-width="1.7"/>
+        <path d="M2 8h14M6 1.5v4M12 1.5v4" stroke="#080c10" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M6.5 12h5M9 10.5v3" stroke="#080c10" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Add to Calendar
+    </button>
+
+    <div class="footer-social reveal d2">
+      <span>Follow for daily content</span>
+      <a href="https://instagram.com/lifts.ali" target="_blank" rel="noopener noreferrer" class="ig-link" aria-label="Follow @lifts.ali on Instagram">
+        <svg width="15" height="15" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="11" cy="11" r="4" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="16.5" cy="5.5" r="1.1" fill="currentColor"/>
+        </svg>
+        @lifts.ali
+      </a>
+    </div>
+
+    <p class="footer-legal reveal d3">
+      Results depicted are individual client experiences. Results may vary based on consistency,
+      adherence to program, and individual physiology. This content is not medical advice.
+    </p>
+    <p class="footer-copy">&copy; 2025 @lifts.ali &middot; All rights reserved</p>
+
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ── 1. HERO WORD-BY-WORD ANIMATION ──────────────── */
+(function initHero() {
+  const hlEl    = document.getElementById('hl-text');
+  const hlSub   = document.getElementById('hl-sub');
+  const body    = document.getElementById('hero-body');
+  const badge   = document.getElementById('badge');
+  const spots   = document.getElementById('spots');
+  const words   = ["YOU'RE", "IN."];
+
+  // Build word spans
+  hlEl.innerHTML = words.map(w =>
+    '<span class="w" aria-hidden="true">' + w + '</span>'
+  ).join('&nbsp;');
+  hlEl.setAttribute('aria-label', words.join(' '));
+
+  // Stagger entrance
+  requestAnimationFrame(function() {
+    setTimeout(function() {
+      badge.classList.add('show');
+      var spans = hlEl.querySelectorAll('.w');
+      spans.forEach(function(s, i) {
+        setTimeout(function() { s.classList.add('show'); }, i * 140);
+      });
+      setTimeout(function() { hlSub.classList.add('show'); }, 350);
+      setTimeout(function() { body.classList.add('show'); }, 480);
+      setTimeout(function() { spots.classList.add('show'); }, 620);
+    }, 180);
+  });
+})();
+
+
+/* ── 2. SCROLL REVEAL — IntersectionObserver ──────── */
+(function initReveal() {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el) { el.classList.add('up'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('up');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '-55px 0px', threshold: 0.04 });
+  els.forEach(function(el) { obs.observe(el); });
+})();
+
+
+/* ── 3. COUNT-UP ANIMATION ───────────────────────── */
+(function initCountUp() {
+  var stats = document.querySelectorAll('.stat-num[data-target]');
+  if (!stats.length) return;
+
+  var easeOut = function(t) { return 1 - Math.pow(1 - t, 3); };
+  var DURATION = 1700;
+
+  var run = function(el) {
+    var target = parseInt(el.dataset.target, 10);
+    var suffix = el.dataset.suffix || '';
+    var start  = performance.now();
+
+    var frame = function(now) {
+      var p = Math.min((now - start) / DURATION, 1);
+      el.textContent = Math.round(easeOut(p) * target) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    stats.forEach(run);
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { run(e.target); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  stats.forEach(function(el) { obs.observe(el); });
+})();
+
+
+/* ── 4. NAV SCROLL SHADOW ────────────────────────── */
+(function initNav() {
+  var nav = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) {
+      nav.style.borderBottomColor = 'rgba(6,180,253,0.12)';
+    } else {
+      nav.style.borderBottomColor = 'rgba(255,255,255,0.045)';
+    }
+  }, { passive: true });
+})();
+
+
+/* ── 5. VIDEO KEYBOARD ACCESSIBILITY ─────────────── */
+document.querySelectorAll('[role="button"]').forEach(function(el) {
+  el.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+  });
+});
+
+document.querySelector('.video-player').addEventListener('click', function() {
+  // Replace this with actual video embed logic
+  console.log('Video play triggered — embed your video URL here.');
+});
+
+
+/* ── 6. CALENDAR BUTTON ──────────────────────────── */
+document.getElementById('cal-btn').addEventListener('click', function() {
+  alert(
+    'To add to your calendar:\n\n' +
+    '1. Open your confirmation email from Ali\n' +
+    '2. Copy your Zoom link and session time\n' +
+    '3. Paste into Google Calendar or Apple Calendar\n\n' +
+    'Set a 30-minute reminder — and show up ready.'
+  );
+});
+</script>
+
+</body>
+</html>
