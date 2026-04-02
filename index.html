@@ -283,7 +283,7 @@ nav {
 ═══════════════════════════════════════════════════════ */
 .vsl-section { padding:72px 0 96px; }
 .video-wrap {
-  max-width:740px; margin:0 auto; text-align:center;
+  max-width:var(--max-w); margin:0 auto; text-align:center;
 }
 .video-eyebrow {
   font-size:0.72rem; font-weight:700; letter-spacing:0.18em;
@@ -475,6 +475,41 @@ nav {
 }
 .author-name { font-size:0.9rem; font-weight:600; color:var(--white); }
 .author-role { font-size:0.78rem; color:var(--muted); margin-top:1px; }
+
+/* WhatsApp screenshot */
+.wa-screenshot {
+  margin-top:20px; border-radius:var(--r);
+  overflow:hidden; border:1px solid rgba(255,255,255,0.07);
+  box-shadow:0 12px 40px rgba(0,0,0,0.4);
+}
+.wa-screenshot img { width:100%; display:block; }
+
+/* Before / After */
+.before-after {
+  margin-top:36px;
+}
+.ba-label {
+  text-align:center; margin-bottom:18px;
+  font-size:0.72rem; font-weight:700; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--muted);
+}
+.ba-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.ba-card {
+  position:relative; border-radius:var(--r); overflow:hidden;
+  border:1px solid var(--card-border);
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+}
+.ba-card img { width:100%; display:block; aspect-ratio:3/4; object-fit:cover; object-position:top; }
+.ba-tag {
+  position:absolute; bottom:10px; left:50%; transform:translateX(-50%);
+  font-size:0.68rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  padding:4px 12px; border-radius:20px; white-space:nowrap;
+}
+.ba-tag.before { background:rgba(0,0,0,0.65); color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.1); }
+.ba-tag.after  { background:rgba(6,180,253,0.2); color:var(--primary); border:1px solid rgba(6,180,253,0.35); }
 
 /* ═══════════════════════════════════════════════════════
    PREPARE CHECKLIST
@@ -913,13 +948,30 @@ footer {
         <span class="star">&#9733;</span><span class="star">&#9733;</span>
       </div>
       <p class="quote-text">
-        Ali didn't give me a cookie-cutter program — he gave me a system built around my actual life. I'm a nurse working 12-hour shifts. Every other coach just gave me excuses to fail. Ali gave me a plan that worked with my chaos. Down 31 lbs in 14 weeks, and I actually kept it off. Nothing has ever stuck like this before.
+        "Life has been great. I been at my lowest ever in like the last 2-3 years and evidently stronger and muscle wise bigger. Like I honestly been taking your advice and it's been working like I see the changes myself."
+      </p>
+      <p class="quote-text" style="margin-top:-10px;font-size:0.92rem;">
+        "My waist is shrinking down almost like 2.5 inches since I reached around the current weight. I feel a lot more confident and comfortable in my own body."
       </p>
       <div class="quote-author">
-        <div class="avatar" aria-hidden="true">S.M.</div>
+        <div class="avatar" aria-hidden="true">A.S.</div>
         <div>
-          <div class="author-name">Sarah M.</div>
-          <div class="author-role">ICU Nurse &middot; Lost 31 lbs in 14 weeks</div>
+          <div class="author-name">Ali S.</div>
+          <div class="author-role">Started at 194 lbs &middot; Dropped to 174 lbs &middot; Waist down 2.5 inches</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="before-after reveal">
+      <p class="ba-label">Real client transformation</p>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <img src="assets/before-1.jpg" alt="Before photo" loading="lazy">
+          <span class="ba-tag before">Before</span>
+        </div>
+        <div class="ba-card">
+          <img src="assets/after-1.jpg" alt="After photo" loading="lazy">
+          <span class="ba-tag after">After</span>
         </div>
       </div>
     </div>
@@ -1031,7 +1083,7 @@ footer {
     <div class="call-box reveal">
       <p class="call-box-eyebrow">Your Strategy Session</p>
       <p class="call-time">[YOUR CALL TIME HERE]</p>
-      <p class="call-time-note">Check your email for the Zoom link &middot; Don't be late</p>
+      <p class="call-time-note">Check your email for the Google Meet link &middot; Don't be late</p>
     </div>
 
     <button class="btn-cal reveal d1" type="button" id="cal-btn" aria-label="Add strategy session to calendar">
@@ -1175,21 +1227,26 @@ document.querySelectorAll('[role="button"]').forEach(function(el) {
   });
 });
 
+/* ── VIDEO PLAYER — replace VIDEO_URL with your actual video link ── */
+var VIDEO_URL = ''; // <-- paste your video URL here (YouTube, Loom, Vimeo, etc.)
+
 document.querySelector('.video-player').addEventListener('click', function() {
-  // Replace this with actual video embed logic
-  console.log('Video play triggered — embed your video URL here.');
+  if (!VIDEO_URL) return;
+  var player = document.querySelector('.video-player');
+  player.innerHTML = '<iframe src="' + VIDEO_URL + '" style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+  player.style.cursor = 'default';
 });
 
 
-/* ── 6. CALENDAR BUTTON ──────────────────────────── */
+/* ── 6. CALENDAR BUTTON — opens Google Calendar with pre-filled event ── */
 document.getElementById('cal-btn').addEventListener('click', function() {
-  alert(
-    'To add to your calendar:\n\n' +
-    '1. Open your confirmation email from Ali\n' +
-    '2. Copy your Zoom link and session time\n' +
-    '3. Paste into Google Calendar or Apple Calendar\n\n' +
-    'Set a 30-minute reminder and show up ready.'
-  );
+  var title = encodeURIComponent('Strategy Call with Ali (@lifts.ali)');
+  var details = encodeURIComponent('Your 1-on-1 strategy session with Ali.\n\nCheck your confirmation email for the Google Meet link.\n\nCome prepared:\n- Your #1 goal\n- Your biggest obstacle\n- Your honest schedule and lifestyle');
+  var url = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+    '&text=' + title +
+    '&details=' + details +
+    '&duration=3000';
+  window.open(url, '_blank', 'noopener,noreferrer');
 });
 </script>
 
